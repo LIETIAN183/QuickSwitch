@@ -1,23 +1,49 @@
 ﻿<Window x:Class="QuickSwitch.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:QuickSwitch="clr-namespace:QuickSwitch"
+        xmlns:vm="clr-namespace:QuickSwitch.ViewModel"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:QuickSwitch"
-        WindowStartupLocation="CenterScreen"
-        Style="{StaticResource WindowStyle.Base}"
+        mc:Ignorable="d"
+        Title="QuickSwitch"
+        Topmost="True"
         SizeToContent="Height"
-        mc:Ignorable="d" Height="256">
-    <Grid>
-        <StackPanel>
-            <TextBox Width="1000" Height="50"/>
-            <ListView Visibility="Collapsed">
-                <ListView.View>
-                    <GridView>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </StackPanel>
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="Manual"
+        AllowDrop="True"
+        ShowInTaskbar="False"
+        Style="{DynamicResource WindowStyle}"
+        AllowsTransparency="True"      
+        Background="Transparent"
+        d:DataContext="{d:DesignInstance vm:MainViewModel}">
+        <!--TODO function Binding
+        Loaded="OnLoaded"
+        Closing="OnClosing"
+        Activated="onActivated"
+        LocationChanged="onLocationChanged"
+        Deactivated="OnDeactivated"
+        IsVisibleChanged="OnVisibleChanged"-->
+    <Window.InputBindings>
+        <!--TODO: Key Binding-->
+    </Window.InputBindings>
+    <Border Style="{DynamicResource WindowBorderStyle}">
+        <StackPanel  Orientation="Vertical">
+            <Grid>
+                <TextBox>
 
-    </Grid>
+                </TextBox>
+                
+                <TextBox x:Name="QueryTextBox" Style="{DynamicResource QueryBoxStyle}">
+                
+                </TextBox>
+            </Grid>
+            <!--Just Learn Wox how to use this-->
+            <Line x:Name="ProgressBar"/>
+            <ContentControl>
+                <!--TODO:Show Result-->
+            </ContentControl>
+        </StackPanel>
+    </Border>
 </Window>

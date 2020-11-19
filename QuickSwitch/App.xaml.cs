@@ -14,4 +14,6 @@ namespace QuickSwitch
     public partial class App : Application
     {
     }
+
+    
 }

@@ -23,11 +23,7 @@ namespace QuickSwitch
         public MainWindow()
         {
             InitializeComponent();
-            //this.WindowStyle = WindowStyle.None;//隐藏菜单栏
-            //this.AllowsTransparency = true;//允许mainwindow透明
-            //this.Opacity = 1;//设置透明程度，0为透明，1不透明
-            //this.WindowStartupLocation =WindowStartupLocation.CenterScreen;
-            //this.SizeToContent = SizeToContent.Height;
+            //TODO:ssdsf
         }
 
         
