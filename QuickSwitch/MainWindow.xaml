@@ -5,6 +5,7 @@
         xmlns:vm="clr-namespace:QuickSwitch.ViewModel"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="QuickSwitch"
         Topmost="True"
@@ -16,8 +17,8 @@
         ShowInTaskbar="False"
         Style="{DynamicResource WindowStyle}"
         AllowsTransparency="True"      
-        Background="Transparent"
-        d:DataContext="{d:DesignInstance vm:MainViewModel}">
+        Background="Transparent"       
+        DataContext="{Binding Source={StaticResource Locator},Path=Main}">
         <!--TODO function Binding
         Loaded="OnLoaded"
         Closing="OnClosing"
@@ -28,22 +29,28 @@
     <Window.InputBindings>
         <!--TODO: Key Binding-->
     </Window.InputBindings>
-    <Border Style="{DynamicResource WindowBorderStyle}">
+   
+    <materialDesign:Card Background="AliceBlue" Padding="8" MouseDown="OnMouseDown" BorderThickness="10" BorderBrush="Black">
         <StackPanel  Orientation="Vertical">
             <Grid>
-                <TextBox>
-
-                </TextBox>
-                
-                <TextBox x:Name="QueryTextBox" Style="{DynamicResource QueryBoxStyle}">
-                
-                </TextBox>
+                <!--<TextBox x:Name="QueryTextSuggestionBox" Style="{DynamicResource QueryTextSuggestionBoxStyle}" IsEnabled="False"/>-->
+                <TextBox x:Name="QueryTextBox" Style="{DynamicResource QueryBoxStyle}"
+                         Text="{Binding QueryText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         TextChanged="OnTextChanged" Background="Azure"  PreviewMouseDown="OnMouseDown" Cursor="Arrow"/>
             </Grid>
             <!--Just Learn Wox how to use this-->
-            <Line x:Name="ProgressBar"/>
+            <!--<Line x:Name="ProgressBar"/>-->
+            <ListBox x:Name="Result1"/>
             <ContentControl>
                 <!--TODO:Show Result-->
             </ContentControl>
         </StackPanel>
-    </Border>
+    </materialDesign:Card>
+
+
+
+        
+    <!--<Border Style="{DynamicResource WindowBorderStyle}" MouseDown="OnMouseDown">
+        
+    </Border>-->
 </Window>

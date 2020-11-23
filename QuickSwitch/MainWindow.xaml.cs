@@ -23,9 +23,28 @@ namespace QuickSwitch
         public MainWindow()
         {
             InitializeComponent();
+            QueryTextBox.Focus();
             //TODO:ssdsf
         }
 
-        
+        private void OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.ChangedButton == MouseButton.Left)
+            {
+                try
+                {
+                    DragMove();
+                }
+                catch(InvalidOperationException ex)
+                {
+
+                }
+            }
+        }
     }
 }

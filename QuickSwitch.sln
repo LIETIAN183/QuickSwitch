@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSwitch", "QuickSwitch\QuickSwitch.csproj", "{486D6B98-3C4B-42BC-B841-04FC7D4DC47F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickSwitch", "QuickSwitch\QuickSwitch.csproj", "{486D6B98-3C4B-42BC-B841-04FC7D4DC47F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{35A9C16A-3FBF-4476-9BEE-220C78024FEF} = {35A9C16A-3FBF-4476-9BEE-220C78024FEF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSwitch.Infrastructure", "QuickSwitch.Infrastructure\QuickSwitch.Infrastructure.csproj", "{35A9C16A-3FBF-4476-9BEE-220C78024FEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{486D6B98-3C4B-42BC-B841-04FC7D4DC47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{486D6B98-3C4B-42BC-B841-04FC7D4DC47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{486D6B98-3C4B-42BC-B841-04FC7D4DC47F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35A9C16A-3FBF-4476-9BEE-220C78024FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A9C16A-3FBF-4476-9BEE-220C78024FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A9C16A-3FBF-4476-9BEE-220C78024FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A9C16A-3FBF-4476-9BEE-220C78024FEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
